@@ -3,6 +3,8 @@ const { Taskmodel } = require("../models/Task.model");
 const newTask = async (req, res) => {
   const { title, description, dueDate, priority, status } = req.body;
 
+  console.log("hello",typeof dueDate)
+
   try {
     if (
       typeof title !== "string" &&

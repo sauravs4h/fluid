@@ -1,7 +1,12 @@
 var jwt = require("jsonwebtoken");
 
 const Auth = (req, res, next) => {
-  const token = req.headers.authorization.split(" ")[1];
+  const token = req.headers.authorization?.split(" ")[1];
+
+  if (!token) {
+    res.status(400).json({ message: "please login" });
+  }
+
   try {
     jwt.verify(token, "shhhhh", function (err, decoded) {
       if (err) {
@@ -15,6 +20,5 @@ const Auth = (req, res, next) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
 
 module.exports = { Auth };
