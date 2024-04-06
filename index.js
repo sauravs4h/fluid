@@ -15,6 +15,7 @@ app.use(cors());
 const { connection } = require("./config/db");
 
 const { userRouter } = require("./routes/User.routes");
+const {taskRouter}= require("./routes/Task.routes");
 
 
 app.get("/", (req, res) => {
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRouter);
+app.use("/task",taskRouter);
 
 
 app.listen(8080, async () => {
