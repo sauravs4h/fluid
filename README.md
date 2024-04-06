@@ -1,6 +1,3 @@
-Sure! Here's a more structured documentation for the provided APIs:
-
----
 
 ## Task Management System API Documentation
 
